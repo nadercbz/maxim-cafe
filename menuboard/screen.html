@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<title>Maxim Menuboard · Screen</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../css/fonts.css?v=1">
+<style>
+/* Maxim Menuboard · ein Hochkant Screen 1080 x 1920 (CSS), Video mal 2 = 4K.
+   Preise und Namen nur aus ../data/menu.js (dieselbe Datei wie die Website). */
+:root { --ink:#160d0e; --bord:#52222a; --bord-d:#2a1316; --red:#9e2a26; --mauve:#a87a7c; --mauve-l:#d4b3b2; --cream:#f3dfb6; --ivory:#f8f0e3; --teal:#19a6d9; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); color: var(--ivory); font-family: "Jost", sans-serif; -webkit-font-smoothing: antialiased; }
+.screen { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: radial-gradient(120% 60% at 50% 0%, #3b1a1e 0%, var(--ink) 62%); }
+.screen::before { content: ""; position: absolute; inset: 0; background: url(../assets/img/marmor.webp) center / 900px; opacity: .07; mix-blend-mode: screen; }
+/* Kopf */
+.head { position: absolute; left: 70px; right: 70px; top: 60px; height: 190px; display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1.5px solid rgba(243,223,182,.25); padding-bottom: 26px; }
+.head-l small { display: block; font: 500 20px "Jost"; letter-spacing: .34em; text-transform: uppercase; color: var(--mauve-l); margin-bottom: 10px; }
+.head-l h1 { font: italic 400 112px/0.95 "Bodoni Moda", serif; color: var(--cream); letter-spacing: -.02em; position: relative; }
+.head-l h1 .sweep { position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,246,226,.85) 50%, transparent 70%); -webkit-background-clip: text; background-clip: text; color: transparent; background-size: 300% 100%; background-position: 150% 0; }
+.head-r { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.head-r svg { width: 96px; height: 96px; color: var(--ivory); }
+.head-r img { width: 210px; }
+/* Bühne mit Produkten */
+.stage { position: absolute; left: 70px; right: 70px; top: 270px; height: 420px; border-radius: 36px; overflow: hidden; background: #1c1a1b url(../assets/img/marmor.webp) center / cover; box-shadow: 0 40px 80px -30px rgba(0,0,0,.7); }
+.stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 90% at 25% 10%, rgba(255,236,210,.16), transparent 60%), linear-gradient(180deg, transparent 60%, rgba(10,6,7,.55)); pointer-events: none; }
+.plate { position: absolute; bottom: 34px; width: 0; transform-origin: 50% 100%; will-change: transform; }
+.plate img { position: absolute; bottom: 0; left: 50%; height: 100%; width: auto; max-width: none; transform: translateX(-50%); display: block; filter: drop-shadow(0 26px 22px rgba(0,0,0,.6)); }
+.plate .tag { position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); white-space: nowrap; padding: 8px 18px; border-radius: 999px; background: rgba(22,13,14,.78); font: 500 20px "Jost"; letter-spacing: .14em; text-transform: uppercase; color: var(--cream); }
+.steam { position: absolute; width: 90px; height: 150px; pointer-events: none; }
+.steam path { fill: none; stroke: rgba(255,255,255,.55); stroke-width: 5; stroke-linecap: round; filter: blur(3px); }
+.stage-badge { position: absolute; right: 30px; top: 28px; z-index: 3; padding: 12px 22px; border-radius: 999px; background: var(--cream); color: var(--bord-d); font: 600 20px "Jost"; letter-spacing: .2em; text-transform: uppercase; }
+/* Listen */
+.lists { position: absolute; left: 70px; right: 70px; top: 730px; bottom: 140px; display: flex; flex-direction: column; gap: 18px; }
+.group h2 { display: flex; align-items: baseline; justify-content: space-between; font: 500 22px "Jost"; letter-spacing: .3em; text-transform: uppercase; color: var(--mauve-l); padding-bottom: 10px; border-bottom: 1.5px solid rgba(243,223,182,.22); }
+.group h2 .cols { display: flex; gap: 0; letter-spacing: .14em; font-size: 17px; }
+.group h2 .cols span, .row .p span { width: 104px; text-align: right; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 5px 14px; margin: 0 -14px; border-radius: 14px; position: relative; }
+.row .n { display: flex; flex-direction: column; min-width: 0; }
+.row .n b { font: 400 35px/1.06 "Bodoni Moda", serif; color: var(--ivory); white-space: nowrap; }
+.row .n i { font: 400 17px/1.2 "Jost"; font-style: normal; letter-spacing: .08em; color: var(--mauve); }
+.row .n i:empty { display: none; }
+.row .p { display: flex; font: 400 32px "Jost"; color: var(--cream); font-variant-numeric: tabular-nums; flex: none; }
+.row .p span.na { color: rgba(243,223,182,.22); }
+.row .p.single span { width: auto; }
+.row .vol { font: 400 19px "Jost"; color: var(--mauve); margin-right: 18px; align-self: center; }
+.row .hl { position: absolute; inset: 0; border-radius: 14px; background: linear-gradient(90deg, rgba(243,223,182,.16), rgba(243,223,182,.04)); opacity: 0; }
+.row .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); display: inline-block; margin-left: 12px; vertical-align: middle; }
+/* Fuß */
+.foot { position: absolute; left: 70px; right: 70px; bottom: 40px; height: 76px; display: flex; align-items: center; justify-content: space-between; border-top: 1.5px solid rgba(243,223,182,.22); font: 500 20px "Jost"; letter-spacing: .2em; text-transform: uppercase; color: var(--mauve-l); }
+.foot b { font: italic 400 28px "Bodoni Moda", serif; letter-spacing: 0; text-transform: none; color: var(--cream); }
+.foot .line { position: absolute; left: 0; top: -1.5px; height: 1.5px; width: 260px; background: linear-gradient(90deg, transparent, var(--cream), transparent); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="maxim-m" viewBox="0 0 100 100">
+    <circle cx="50" cy="53" r="45" fill="none" stroke="#a87a7c" stroke-width="1.8"/>
+    <path d="M60.6 15.6 A38.5 38.5 0 1 1 45.4 14.8" fill="none" stroke="currentColor" stroke-width="5.4"/>
+    <path d="M50.5 37.5 C49 27 57 19 72.5 10.5 C69.5 22 62 30.5 50.5 37.5Z" fill="#a87a7c"/>
+    <path d="M48 35 C46.5 24 54.5 15 70.5 6 C67 18 59.5 27.5 48 35Z" fill="currentColor"/>
+    <path d="M50 70 L62.5 49.5 L62.5 70 L73 70 L73 43 L61 43 L50 60Z" fill="#a87a7c"/>
+    <path d="M27 43 L39 43 L50 60 L50 70 L37.5 49.5 L37.5 70 L27 70Z" fill="currentColor"/>
+  </symbol>
+</defs></svg>
+<div class="screen" id="screen"></div>
+<script src="../data/menu.js"></script>
+<script>
+(function () {
+  "use strict";
+  /* Aufteilung der vier Screens. plates: Bild (Freisteller aus 01_Produktfotos/freigestellt, als webp in assets/img/cut), Mitte in Prozent der Bühnenbreite, Höhe in px, Dampf ja/nein. Alle stehen auf einer Linie. */
+  var SCREENS = {
+    1: { kick: "Espresso Bar", title: "Kaffee", sub: "Coffee", groups: ["espresso", "hot"], badge: "Hafer · Soja · Mandel +0,50",
+         plates: [["latte", 12, 280, 1], ["espresso", 33, 140, 1], ["mocha", 57, 190, 1], ["hotchocolate", 84, 190, 1]] },
+    2: { kick: "Täglich ab 08:00", title: "Frühstück", sub: "Breakfast & Sweets", groups: ["food", "sweets"], badge: "Neu · Frühstück",
+         plates: [["oats", 12, 280], ["croissant", 35, 145], ["chia", 60, 240], ["muffin", 84, 185]] },
+    3: { kick: "Kalt & erfrischend", title: "Kalt", sub: "Iced & Soft Drinks", groups: ["iced", "soft"], badge: "Frisch gepresst",
+         plates: [["icedlatte", 13, 285], ["icedmocha", 35, 310], ["osaft", 60, 270], ["softdrinks", 86, 310]] },
+    4: { kick: "Aperitivo bis 02:00", title: "Bar", sub: "Bar & Extras", groups: ["bar", "extras", "sweets2"], badge: "Fr & Sa bis 02:00",
+         plates: [["aperol", 13, 330], ["rotwein", 34, 330], ["champagner", 58, 300], ["bier", 84, 310]] }
+  };
+  var LOOP = 24000;
+  var q = new URLSearchParams(location.search), S = +(q.get("s") || 1), cfg = SCREENS[S] || SCREENS[1];
+  var M = window.MAXIM_MENU, cats = {};
+  M.cats.forEach(function (c) { cats[c.id] = c; });
+  /* Screen 4 zeigt unter Extras noch die kleinen Sweets für den Kaffee am Abend nicht doppelt: sweets2 ist leer gelassen */
+  var fmt = function (v) { return v.toFixed(2).replace(".", ","); };
+  var en = function (o) { return o.n.en && o.n.en !== o.n.de ? o.n.en : ""; };
+  var h = "";
+  h += '<header class="head"><div class="head-l"><small>' + cfg.kick + '</small><h1>' + cfg.title + '<span class="sweep" aria-hidden="true">' + cfg.title + '</span></h1></div>' +
+       '<div class="head-r"><svg viewBox="0 0 100 100"><use href="#maxim-m"/></svg><img src="../assets/img/wordmark.png" alt="Maxim"></div></header>';
+  h += '<div class="stage"><span class="stage-badge">' + cfg.badge + '</span>';
+  cfg.plates.forEach(function (p, k) {
+    h += '<div class="plate" data-k="' + k + '" style="left:' + p[1] + '%;height:' + p[2] + 'px"><img src="../assets/img/cut/' + p[0] + '.webp" alt=""></div>';
+    if (p[3]) h += '<svg class="steam" data-k="' + k + '" viewBox="0 0 90 150" style="left:calc(' + p[1] + '% - 45px);bottom:' + (p[2] + 4) + 'px"><path d="M30 145 C10 110 50 90 30 55 C15 30 35 15 30 2"/><path d="M60 145 C40 115 75 95 58 62 C46 40 64 22 60 8"/></svg>';
+  });
+  h += '</div><div class="lists">';
+  cfg.groups.forEach(function (g) {
+    var c = cats[g]; if (!c) return;
+    h += '<section class="group"><h2><span>' + c.n.de + (c.n.en && c.n.en !== c.n.de ? ' <span style="color:#a87a7c;letter-spacing:.2em">· ' + c.n.en + '</span>' : '') + '</span>' +
+         (c.sized ? '<span class="cols"><span>S</span><span>M</span><span>L</span></span>' : '') + '</h2>';
+    c.items.forEach(function (i) {
+      var price;
+      if (c.sized) price = '<span class="p">' + i.p.map(function (v) { return v == null ? '<span class="na">–</span>' : '<span>' + fmt(v) + '</span>'; }).join("") + '</span>';
+      else price = (i.vol ? '<span class="vol">' + i.vol + '</span>' : '') + '<span class="p single"><span>' + i.p.map(fmt).join(" / ") + ' €</span></span>';
+      h += '<div class="row"><span class="hl"></span><span class="n"><b>' + i.n.de + '</b><i>' + en(i) + '</i></span><span style="display:flex;align-items:center">' + price + '</span></div>';
+    });
+    h += '</section>';
+  });
+  h += '</div><footer class="foot"><span class="line"></span><span>Potsdamer Platz 11</span><b>It’s the place.</b><span>Täglich ab 08:00</span></footer>';
+  document.getElementById("screen").innerHTML = h;
+
+  /* Zeitgesteuerte Bewegung: setT(ms) zeichnet jeden Zustand gleich (für das Video Bild für Bild) */
+  var plates = [].slice.call(document.querySelectorAll(".plate")), steams = [].slice.call(document.querySelectorAll(".steam"));
+  var rows = [].slice.call(document.querySelectorAll(".row")), sweep = document.querySelector(".sweep"), line = document.querySelector(".foot .line");
+  var TAU = Math.PI * 2;
+  function ease(x) { return x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x); }
+  function setT(ms) {
+    var t = (ms % LOOP) / LOOP; /* 0..1, nahtlos */
+    plates.forEach(function (p, k) {
+      var ph = t * TAU + k * 1.7;
+      p.style.transform = "translateY(" + (Math.sin(ph) * 5).toFixed(2) + "px) rotate(" + (Math.sin(ph * 2 + k) * .6).toFixed(2) + "deg)";
+    });
+    steams.forEach(function (s, k) {
+      var u = (t * 4 + k * .33) % 1;
+      s.style.opacity = (Math.sin(u * Math.PI) * .9).toFixed(3);
+      s.style.transform = "translateY(" + (-u * 40).toFixed(1) + "px) scaleX(" + (1 + Math.sin(u * TAU) * .12).toFixed(3) + ")";
+    });
+    /* nacheinander leuchtet je eine Zeile auf, über die ganze Schleife verteilt */
+    var n = rows.length, slot = t * n;
+    rows.forEach(function (r, k) {
+      var d = slot - k, a = d >= 0 && d < 1 ? Math.sin(d * Math.PI) : 0;
+      r.firstChild.style.opacity = a.toFixed(3);
+    });
+    /* Lichtlauf über Titel und Fußlinie alle 24 s, Screens versetzt wie eine Welle */
+    var w = ((t - (S - 1) * 0.04) % 1 + 1) % 1, s2 = ease(w / 0.12);
+    sweep.style.backgroundPosition = (150 - s2 * 200) + "% 0";
+    line.style.transform = "translateX(" + (s2 * 700) + "px)";
+    line.style.opacity = w < 0.14 ? 1 : 0;
+  }
+  var render = q.has("render");
+  window.MB = { setT: setT, ready: false };
+  Promise.all([document.fonts.ready].concat([].slice.call(document.images).map(function (im) { return im.complete ? 0 : new Promise(function (r) { im.onload = im.onerror = r; }); }))).then(function () {
+    window.MB.ready = true;
+    setT(0);
+    if (!render) (function loop() { setT(Date.now()); requestAnimationFrame(loop); })(); /* live: nach Uhrzeit, alle Screens synchron */
+  });
+})();
+</script>
+</body>
+</html>

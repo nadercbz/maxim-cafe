@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){var L=["de","en","tr","ru","ar"],q=(location.search.match(/[?&]lang=(\w+)/)||[])[1],s;try{s=localStorage.getItem("maxim-lang")}catch(e){}var l=L.indexOf(q)>-1?q:(L.indexOf(s)>-1?s:"de");if(q&&L.indexOf(q)>-1){try{localStorage.setItem("maxim-lang",q)}catch(e){}}var d=document.documentElement;d.lang=l;if(l==="ar")d.dir="rtl";d.className="js";})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Standorte · Maxim Café & Bar Berlin</title>
+<meta name="description" content="Alle Maxim Standorte in Berlin: Potsdamer Platz, Am Tacheles, KaDeWe und Gesundbrunnen-Center.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#52222a">
+<meta property="og:title" content="Maxim Café & Bar · Standorte in Berlin">
+<meta property="og:image" content="assets/img/og.jpg">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css?v=1">
+<script>if(document.documentElement.lang==="ru")document.write('<link rel="stylesheet" href="css/fonts-ru.css?v=1">');if(document.documentElement.lang==="ar")document.write('<link rel="stylesheet" href="css/fonts-ar.css?v=1">');</script>
+<link rel="stylesheet" href="css/style.css?v=17">
+</head>
+<body class="page-loc">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="maxim-m" viewBox="0 0 100 100">
+      <circle class="m-ring2" cx="50" cy="53" r="45" fill="none" stroke="#a87a7c" stroke-width="1.8"/>
+      <path class="m-ring" d="M60.6 15.6 A38.5 38.5 0 1 1 45.4 14.8" fill="none" stroke="currentColor" stroke-width="5.4" stroke-linecap="butt"/>
+      <path class="m-leaf2" d="M50.5 37.5 C49 27 57 19 72.5 10.5 C69.5 22 62 30.5 50.5 37.5Z" fill="#a87a7c"/>
+      <path class="m-leaf" d="M48 35 C46.5 24 54.5 15 70.5 6 C67 18 59.5 27.5 48 35Z" fill="currentColor"/>
+      <path class="m-m2" d="M50 70 L62.5 49.5 L62.5 70 L73 70 L73 43 L61 43 L50 60Z" fill="#a87a7c"/>
+      <path class="m-m" d="M27 43 L39 43 L50 60 L50 70 L37.5 49.5 L37.5 70 L27 70Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+<header class="nav is-solid" data-nav>
+  <a class="nav-brand" href="index.html" aria-label="Maxim Café & Bar" data-i18n-a="aria-label:nav.home">
+    <svg class="nav-m" viewBox="0 0 100 100" aria-hidden="true"><use href="#maxim-m"/></svg>
+    <img class="nav-word" src="assets/img/wordmark.png" alt="" width="727" height="176">
+  </a>
+  <nav class="nav-links" aria-label="Hauptnavigation" data-i18n-a="aria-label:nav.label">
+    <a href="index.html#tag" data-i18n="nav.day">Der Tag</a>
+    <a href="index.html#fruehstueck" data-i18n="nav.breakfast">Frühstück</a>
+    <a href="index.html#labor" data-i18n="nav.coffee">Kaffee</a>
+    <a href="index.html#karte" data-i18n="nav.menu">Karte</a>
+    <a href="index.html#ort" data-i18n="nav.place">Ort</a>
+    <a href="standorte.html" class="is-active" aria-current="page" data-i18n="nav.locations">Standorte</a>
+    <a href="index.html#besuch" data-i18n="nav.visit">Besuch</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang">
+      <button class="lang-toggle" type="button" aria-expanded="false" aria-label="Sprache wählen" data-i18n-a="aria-label:lang.label">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span data-lang-current>DE</span>
+      </button>
+      <ul class="lang-menu">
+        <li><a href="?lang=de" data-lang="de" lang="de">Deutsch</a></li>
+        <li><a href="?lang=en" data-lang="en" lang="en">English</a></li>
+        <li><a href="?lang=tr" data-lang="tr" lang="tr">Türkçe</a></li>
+        <li><a href="?lang=ru" data-lang="ru" lang="ru">Русский</a></li>
+        <li><a href="?lang=ar" data-lang="ar" lang="ar" dir="rtl">العربية</a></li>
+      </ul>
+    </div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-i18n-a="aria-label:js.menuOpen"><span></span><span></span></button>
+  </div>
+</header>
+<div class="mmenu" id="mobile-menu" hidden>
+  <nav>
+    <a href="index.html#tag"><small>01</small><span data-i18n="nav.day">Der Tag</span></a>
+    <a href="index.html#fruehstueck"><small>02</small><span data-i18n="nav.breakfast">Frühstück</span></a>
+    <a href="index.html#labor"><small>03</small><span data-i18n="nav.coffee">Kaffee</span></a>
+    <a href="index.html#karte"><small>04</small><span data-i18n="nav.menu">Karte</span></a>
+    <a href="index.html#ort"><small>05</small><span data-i18n="nav.place">Ort</span></a>
+    <a href="standorte.html" aria-current="page"><small>06</small><span data-i18n="nav.locations">Standorte</span></a>
+    <a href="index.html#besuch"><small>07</small><span data-i18n="nav.visit">Besuch</span></a>
+  </nav>
+  <div class="mmenu-langs">
+    <a href="?lang=de" data-lang="de">DE</a><a href="?lang=en" data-lang="en">EN</a><a href="?lang=tr" data-lang="tr">TR</a><a href="?lang=ru" data-lang="ru">RU</a><a href="?lang=ar" data-lang="ar">AR</a>
+  </div>
+  <p class="mmenu-foot">Maxim Café &amp; Bar · Berlin</p>
+</div>
+
+<main class="loc" id="top">
+  <!-- Kopf -->
+  <section class="loc-head">
+    <p class="kicker" data-i18n="loc.kicker">Maxim in Berlin</p>
+    <h1 class="sec-title loc-title" data-i18n="loc.title">Vier Orte. <em>Ein</em> Maxim.</h1>
+    <p class="sec-lead" data-i18n="loc.lead">Vom Potsdamer Platz bis ins KaDeWe. Wähl einen Ort auf der Karte oder in der Liste, wir fliegen dich hin.</p>
+  </section>
+
+  <!-- Karte und Liste: beim Scrollen fliegt die Kamera von Haus zu Haus -->
+  <section class="loc-stage" data-loc>
+    <div class="loc-pin">
+      <div class="loc-map" data-loc-map aria-label="Karte der Maxim Standorte in Berlin" data-i18n-a="aria-label:loc.maplabel" role="img">
+        <svg viewBox="0 0 1000 833" preserveAspectRatio="xMidYMid meet" data-loc-svg>
+          <defs>
+            <radialGradient id="locGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f3dfb6" stop-opacity=".55"/><stop offset="1" stop-color="#f3dfb6" stop-opacity="0"/></radialGradient>
+            <linearGradient id="locGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e6bb"/><stop offset=".55" stop-color="#c79d5e"/><stop offset="1" stop-color="#8d6631"/></linearGradient>
+          </defs>
+          <g data-loc-cam>
+            <g class="loc-bezirke" data-loc-bezirke></g>
+            <path class="loc-fluss" data-loc-fluss d=""/>
+            <path class="loc-ring" data-loc-ring d=""/>
+            <g class="loc-lines" data-loc-lines></g>
+            <g class="loc-pins" data-loc-pins></g>
+          </g>
+        </svg>
+        <p class="loc-hint" data-i18n="loc.scroll">Scrollen und durch Berlin fliegen</p>
+        <div class="loc-legend"><span class="lg-ring"></span><span data-i18n="loc.legend.ring">S-Bahn Ring</span><span class="lg-fluss"></span><span data-i18n="loc.legend.fluss">Spree und Havel</span></div>
+      </div>
+      <div class="loc-side">
+        <p class="loc-count"><b data-loc-count>4</b> <span data-i18n="loc.list">Häuser in Berlin</span></p>
+        <ol class="loc-list" data-loc-list></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Außerhalb von Berlin -->
+  <section class="loc-out">
+    <p class="kicker" data-i18n="loc.outside">Außerhalb von Berlin</p>
+    <div class="loc-out-cards" data-loc-out></div>
+  </section>
+
+  <p class="loc-credit" data-i18n="loc.credit">Karte: Bezirke Amt für Statistik Berlin Brandenburg (CC BY), Spree, Havel und Ringbahn © OpenStreetMap Mitwirkende (ODbL). Fotos: Stimmungsbilder aus dem Maxim.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-mark" aria-hidden="true"><img src="assets/img/wordmark.png" alt="" width="727" height="176" loading="lazy"></div>
+  <div class="foot-row">
+    <p dir="ltr" lang="en" class="foot-claim">Not another new place… It’s the place!</p>
+    <p class="foot-links"><a href="impressum.html" data-i18n="foot.imprint">Impressum</a><a href="datenschutz.html" data-i18n="foot.privacy">Datenschutz</a><a href="https://www.instagram.com/maximcafe01/" target="_blank" rel="noopener">Instagram</a></p>
+    <p class="foot-copy">© Kaffee Maxim GmbH</p>
+  </div>
+</footer>
+
+<script src="data/standorte.js?v=1"></script>
+<script src="data/berlin-karte.js?v=2"></script>
+<script src="js/i18n-data.js?v=9"></script>
+<script src="js/i18n.js?v=1"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/standorte.js?v=3"></script>
+</body>
+</html>
