@@ -564,7 +564,7 @@
   (function film() {
     var secs = $$("[data-film]"); if (!secs.length) return;
     /* Imagefilm: Deutsch mit Naders Stimme, alle anderen Sprachen englisch. Ambiente Film gibt es auf Deutsch. */
-    var de = LANG === "de", F = "assets/video/film/", FV = "?v=20261117"; /* Cache Zähler der Filme, nach neuem Rendern hochzählen */
+    var de = LANG === "de", F = "assets/video/film/", FV = "?v=20261117c"; /* Cache Zähler der Filme, nach neuem Rendern hochzählen */
     var SRC = {
       image: { poster: de ? ["poster-de.jpg", "poster-de-9x16.jpg"] : ["poster.jpg", "poster-9x16.jpg"], video: de ? ["maxim-de-16x9.mp4", "maxim-de-9x16.mp4"] : ["maxim-16x9.mp4", "maxim-9x16.mp4"] },
       amb: { poster: ["poster-ambiente.jpg", "poster-ambiente-9x16.jpg"], video: ["maxim-ambiente-16x9.mp4", "maxim-ambiente-9x16.mp4"] }
@@ -585,7 +585,7 @@
   /* ---------- PDF Karte: Hauptknopf und Titelbild folgen der Sprache ---------- */
   (function pdf() {
     var L = LANG.toUpperCase(), main = $("[data-dl-main]"), cov = $("[data-dl-cover]"); if (!main) return;
-    main.href = "assets/menu/Maxim-Karte-" + L + ".pdf?v=20261117"; cov.src = "assets/menu/cover-" + LANG + ".webp?v=20261117";
+    main.href = "assets/menu/Maxim-Karte-" + L + ".pdf?v=20261117c"; cov.src = "assets/menu/cover-" + LANG + ".webp?v=20261117c";
     $$(".menu-dl-langs a").forEach(function (a) { if (a.textContent === L) a.setAttribute("aria-current", "true"); });
   })();
 
