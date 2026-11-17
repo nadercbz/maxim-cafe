@@ -54,7 +54,7 @@ dialog iframe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920
     [1, 2, 3, 4].forEach(function (s) {
       var tv = document.createElement("div"); tv.className = "tv";
       tv.innerHTML = mode === "live" ? '<iframe src="screen.html?s=' + s + '" title="Screen ' + s + '" loading="lazy"></iframe>' :
-        '<video src="video/Maxim_Menuboard_Screen' + s + '_1080x1920.mp4" muted loop playsinline autoplay></video>';
+        '<video src="video/Maxim_Menuboard_Screen' + s + '_1080x1920.mp4?v=20261117" muted loop playsinline autoplay></video>';
       tv.insertAdjacentHTML("beforeend", "<span>" + s + "</span>");
       tv.addEventListener("click", function () { open(s); });
       box.appendChild(tv); fit(tv);

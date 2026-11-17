@@ -564,7 +564,7 @@
   (function film() {
     var secs = $$("[data-film]"); if (!secs.length) return;
     /* Imagefilm: Deutsch mit Naders Stimme, alle anderen Sprachen englisch. Ambiente Film gibt es auf Deutsch. */
-    var de = LANG === "de", F = "assets/video/film/";
+    var de = LANG === "de", F = "assets/video/film/", FV = "?v=20261117"; /* Cache Zähler der Filme, nach neuem Rendern hochzählen */
     var SRC = {
       image: { poster: de ? ["poster-de.jpg", "poster-de-9x16.jpg"] : ["poster.jpg", "poster-9x16.jpg"], video: de ? ["maxim-de-16x9.mp4", "maxim-de-9x16.mp4"] : ["maxim-16x9.mp4", "maxim-9x16.mp4"] },
       amb: { poster: ["poster-ambiente.jpg", "poster-ambiente-9x16.jpg"], video: ["maxim-ambiente-16x9.mp4", "maxim-ambiente-9x16.mp4"] }
@@ -573,10 +573,10 @@
       /* Imagefilm immer im breiten 16:9 Format über die ganze Breite, nie als Handy Hochformat */
       var s = SRC[player.dataset.kind] || SRC.image, k = (small() && player.dataset.kind !== "image") ? 1 : 0, poster = $(".film-poster", player);
       poster.addEventListener("error", function () { var f = player.closest(".film-item"); if (f) f.hidden = true; });
-      poster.src = F + s.poster[k];
+      poster.src = F + s.poster[k] + FV;
       $(".film-play", player).addEventListener("click", function () {
         var v = document.createElement("video");
-        v.src = F + s.video[k]; v.controls = true; v.playsInline = true; v.autoplay = true; v.poster = poster.src;
+        v.src = F + s.video[k] + FV; v.controls = true; v.playsInline = true; v.autoplay = true; v.poster = poster.src;
         player.innerHTML = ""; player.appendChild(v); v.play().catch(function () {});
       });
     });
@@ -585,7 +585,7 @@
   /* ---------- PDF Karte: Hauptknopf und Titelbild folgen der Sprache ---------- */
   (function pdf() {
     var L = LANG.toUpperCase(), main = $("[data-dl-main]"), cov = $("[data-dl-cover]"); if (!main) return;
-    main.href = "assets/menu/Maxim-Karte-" + L + ".pdf"; cov.src = "assets/menu/cover-" + LANG + ".webp";
+    main.href = "assets/menu/Maxim-Karte-" + L + ".pdf?v=20261117"; cov.src = "assets/menu/cover-" + LANG + ".webp?v=20261117";
     $$(".menu-dl-langs a").forEach(function (a) { if (a.textContent === L) a.setAttribute("aria-current", "true"); });
   })();
 
